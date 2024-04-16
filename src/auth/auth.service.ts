@@ -6,8 +6,16 @@ import * as bcrypt from 'bcryptjs';
 export class AuthService {
   private readonly users = [
     // Simula uma lista de usuários
-    { userId: 1, username: 'user1', password: bcrypt.hashSync('pass1', 10) },
-    { userId: 2, username: 'user2', password: bcrypt.hashSync('pass2', 10) },
+    {
+      userId: 1,
+      username: 'user1',
+      password: bcrypt.hashSync('pass123456', 10),
+    },
+    {
+      userId: 2,
+      username: 'user2',
+      password: bcrypt.hashSync('pass123456', 10),
+    },
   ];
 
   constructor(private readonly jwtService: JwtService) {}

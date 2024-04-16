@@ -1,16 +1,17 @@
-import { IsNotEmpty, IsInt } from 'class-validator';
+import { IsNotEmpty, IsInt, IsNumber, Min } from 'class-validator';
 
 export class ProductCreateDto {
-  @IsNotEmpty()
+  @IsNotEmpty({ message: 'O nome do produto é obrigatório.' })
   name: string;
 
-  @IsNotEmpty()
+  @IsNotEmpty({ message: 'A descrição do produto é obrigatória.' })
   description: string;
 
-  @IsNotEmpty()
+  @IsNumber({}, { message: 'O preço deve ser um número válido.' })
+  @Min(0.01, { message: 'O preço deve ser maior que zero.' })
   price: number;
 
-  @IsInt()
-  @IsNotEmpty()
+  @IsInt({ message: 'O ID da fábrica deve ser um número inteiro.' })
+  @IsNotEmpty({ message: 'O ID da fábrica é obrigatório.' })
   factoryId: number;
 }

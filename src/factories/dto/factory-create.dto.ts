@@ -1,9 +1,9 @@
 import { IsNotEmpty } from 'class-validator';
 
 export class FactoryCreateDto {
-  @IsNotEmpty()
+  @IsNotEmpty({ message: 'O nome não pode estar vazio.' })
   name: string;
 
-  @IsNotEmpty()
+  @IsNotEmpty({ message: 'A descrição não pode estar vazia.' })
   description: string;
 }

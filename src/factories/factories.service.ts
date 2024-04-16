@@ -1,4 +1,9 @@
-import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import {
+  HttpException,
+  HttpStatus,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Factory } from './entities/factory.entity';
 import { Repository } from 'typeorm';
@@ -25,6 +30,10 @@ export class FactoriesService {
 
   async delete(id: number): Promise<void> {
     try {
+      const product = await this.factoriesService.findOne({ where: { id } });
+      if (!product)
+        throw new NotFoundException(`Factory with ID ${id} not found.`);
+
       await this.factoriesService.delete(id);
     } catch (error) {
       throw new HttpException(
