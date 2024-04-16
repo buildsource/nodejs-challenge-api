@@ -5,3 +5,8 @@ export interface PaginationResponse<T> {
   totalItems: number;
   totalPages: number;
 }
+
+export interface Pagination<T> {
+  items: T[];
+  totalItems: number;
+}
