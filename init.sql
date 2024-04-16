@@ -1,3 +1,7 @@
+DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS product;
+DROP TABLE IF EXISTS factory;
+
 CREATE TABLE IF NOT EXISTS user (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(255) NOT NULL UNIQUE,
@@ -9,7 +13,8 @@ CREATE TABLE IF NOT EXISTS user (
 
 CREATE TABLE IF NOT EXISTS factory (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    descripcion TEXT,
+    name VARCHAR(255),
+    description VARCHAR(255),
     createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -25,7 +30,7 @@ CREATE TABLE IF NOT EXISTS product (
     FOREIGN KEY (factoryId) REFERENCES factory(id)
 );
 
-INSERT INTO factory (descripcion) VALUES ('Factory Description'), ('Factory Description 2');
+INSERT INTO factory (name, description) VALUES ('Factory Name 1', 'Factory Description 1'), ('Factory Name 2', 'Factory Description 2');
 
 INSERT INTO product (name, description, price, factoryId) VALUES 
     ('Product Name 1', 'Product Description 1', 99.99, 1),
@@ -44,7 +49,7 @@ INSERT INTO product (name, description, price, factoryId) VALUES
     ('Product Name 14', 'Product Description 14', 219.99, 1);
 
 INSERT INTO user (username, password, email) VALUES 
-    ('usuario_exemplo', 'senha_segura', 'usuario.exemplo@email.com');
+    ('User 1', 'senha_segura', 'user1@email.com');
 
 -- Ajuste para desativar ONLY_FULL_GROUP_BY
 SET SESSION sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
