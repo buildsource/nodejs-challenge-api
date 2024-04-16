@@ -48,8 +48,6 @@ INSERT INTO product (name, description, price, factoryId) VALUES
     ('Product Name 13', 'Product Description 13', 199.99, 1),
     ('Product Name 14', 'Product Description 14', 219.99, 1);
 
-INSERT INTO user (username, password, email) VALUES 
-    ('User 1', 'senha_segura', 'user1@email.com');
 
 -- Ajuste para desativar ONLY_FULL_GROUP_BY
 SET SESSION sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));

@@ -6,6 +6,7 @@ import { ProductsModule } from './products/products.module';
 import { FactoriesModule } from './factories/factories.module';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 import { TransformInterceptor } from './common/interceptors/transform.interceptor';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { TransformInterceptor } from './common/interceptors/transform.intercepto
     }),
     ProductsModule,
     FactoriesModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [
