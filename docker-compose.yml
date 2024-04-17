@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: 'nodejs_challenge'
+      MYSQL_USER: 'dev'
+      MYSQL_PASSWORD: 'devpass'
+      MYSQL_ROOT_PASSWORD: 'rootpass'
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+volumes:
+  db-data:
