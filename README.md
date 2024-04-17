@@ -43,12 +43,12 @@ npm run start:dev
 
 ## Available Endpoints:
 
-GET /products/product-get-all: List all products.
-POST /products/product-create: Create a new product.
-DELETE /products/product-delete/:id: Remove an existing product.
-POST /factories/factory-create: Create a new factory.
-DELETE /factories/factory-delete/:id: Remove a factory.
-POST /auth/login: Perform login to obtain the token.
+- GET /products/product-get-all: List all products.
+- POST /products/product-create: Create a new product.
+- DELETE /products/product-delete/:id: Remove an existing product.
+- POST /factories/factory-create: Create a new factory.
+- DELETE /factories/factory-delete/:id: Remove a factory.
+- POST /auth/login: Perform login to obtain the token.
 
 
 ## Tests
