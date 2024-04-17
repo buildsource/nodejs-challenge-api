@@ -98,7 +98,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Product Name 14\",\r\n    \"description\": \"Product Description 12\",\r\n    \"price\": 1160.99,\r\n    \"factoryId\": 1\r\n}",
+							"raw": "{\r\n    \"name\": \"Product Name 14\",\r\n    \"description\": \"Product Description 12\",\r\n    \"price\": 1160.99,\r\n    \"amount\": 1,\r\n    \"factoryId\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

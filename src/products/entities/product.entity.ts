@@ -8,7 +8,7 @@ import {
 
 @Entity()
 export class Product {
-  @PrimaryGeneratedColumn({ type: 'bigint' })
+  @PrimaryGeneratedColumn()
   id: number;
 
   @Column({ type: 'varchar', length: 255 })
@@ -20,10 +20,10 @@ export class Product {
   @Column({ type: 'decimal', precision: 10, scale: 2 })
   price: number;
 
-  @Column({ type: 'bigint' })
+  @Column()
   amount: number;
 
-  @Column({ type: 'bigint' })
+  @Column()
   factoryId: number;
 
   @CreateDateColumn()

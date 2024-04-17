@@ -1,19 +1,64 @@
-# nodejs-challenge
+# NODEJS-CHALLENGE-API
+
+## Introduction
+This project is a REST API for managing products and factories. It's intended for use in inventory or e-commerce systems.
+
+## Technologies Used
+- Node.js
+- NestJS
+- TypeORM
+- PostgreSQL
+- Jest para testes
+- Docker
+
+## Environment Setup
+To set up the development environment, you'll need Node.js installed on your machine, along with Docker to manage database containers.
+
+## Installation
+Clone the repository and install the dependencies:
+```bash
+git clone https://github.com/buildsource/nodejs-challenge-api.git
+cd NODEJS-CHALLENGE-API
+npm install
+```
+
+To start the database with Docker and execute database migrations:
+```bash
+docker-compose up -d
+```
+
+## Environment Configuration
+
+Before running the application, you'll need to set up your environment variables.
+
+1. Create a `.env` file in the project root.
+2. Use the `.env.example` as a template.
 
 
-1. Create a DB using your preferred DBMS. Field “Id” should be auto-incremental, properties should be the same as on image. And you need to create a second table with the name “Fabrica” with “IdFab” as the primary key and foreign key of table products and the other field needs to be “descripcion” and need to be text typed having the name of the product.
-2. Create and endpoint in node.js to GET all products grouped by FabricID (“IdFab”)
-3. Create another endpoint, POST, to create a new product, it should insert a new
-product on the table “Productos” and “Fabrica”. The endpoint should validate each field and type, if creation is correct, you should send a “Status” field in response, with “true” Boolean value, and a “Payload” field with product information. If sent information is invalid related to types or missing fields, you should return a “400” error with a custom message saying “Missing information”.
-4. Create a new endpoint in typescript to DELETE a product by ID.
-5. All 3 endpoints should have their own controllers, and routes should be exported to
-the main server file.
-6. Create an authentication method using JWT to secure endpoint calls by using
-“Bearer” token to authenticate.
-7. Create a POSTMAN collection to make HTTP calls more simple.
-8. Create 3 Unit Test using the preferred Testing library to test 3 endpoints.
-9. Ideally create a “docker compose” file to create DB and run API easily.
-10. Create a fork from original repo
-https://github.com/sebasworkana/nodejs-challenge.git and in your personal repository (forked repository) Create a new branch from master with you name and last name, and send a PR to this repo (master branch).
- 
-11. Finally give access to the repo to sebasworkana user in github.
+## Usage
+To start the server in development mode, use:
+```bash
+npm run start:dev
+```
+
+## Available Endpoints:
+
+GET /products/product-get-all: List all products.
+POST /products/product-create: Create a new product.
+DELETE /products/product-delete/:id: Remove an existing product.
+POST /factories/factory-create: Create a new factory.
+DELETE /factories/factory-delete/:id: Remove a factory.
+POST /auth/login: Perform login to obtain the token.
+
+
+## Tests
+Run all tests with:
+
+```bash
+npm test
+```
+
+For coverage tests, use:
+```bash
+npm run test:cov
+```

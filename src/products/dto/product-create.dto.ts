@@ -11,6 +11,10 @@ export class ProductCreateDto {
   @Min(0.01, { message: 'O preço deve ser maior que zero.' })
   price: number;
 
+  @IsInt({ message: 'A quantidade deve ser um número inteiro' })
+  @Min(1, { message: 'A quantidade deve ser maior que zero.' })
+  amount: number;
+
   @IsInt({ message: 'O ID da fábrica deve ser um número inteiro.' })
   @IsNotEmpty({ message: 'O ID da fábrica é obrigatório.' })
   factoryId: number;
