@@ -8,7 +8,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Product } from './entities/product.entity';
 import { ProductCreateDto } from './dto/product-create.dto';
-import { Pagination } from 'src/common/interfaces/pagination.interface';
+import { Pagination } from '../common/interfaces/pagination.interface';
 
 @Injectable()
 export class ProductsService {

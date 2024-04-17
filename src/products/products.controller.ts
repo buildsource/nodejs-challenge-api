@@ -11,8 +11,8 @@ import {
 import { ProductCreateDto } from './dto/product-create.dto';
 import { ProductsService } from './products.service';
 import { Product } from './entities/product.entity';
-import { PaginationUtil } from 'src/common/utils/pagination.util';
-import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
+import { PaginationUtil } from '../common/utils/pagination.util';
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 
 @Controller('products')
 export class ProductsController {
