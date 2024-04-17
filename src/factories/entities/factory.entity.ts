@@ -8,7 +8,7 @@ import {
 
 @Entity()
 export class Factory {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn({ type: 'bigint' })
   id: number;
 
   @Column({ type: 'varchar', length: 255 })
